@@ -16,12 +16,17 @@ themeBtn.addEventListener("click", () => {
   setTheme(current === "dark" ? "light" : "dark");
 });
 
-// Form interaction (no backend)
+// Form interaction 
 
 const form = document.getElementById("contactForm");
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  alert("Message sent successfully! (Demo only)");
+
+  const formMessage = document.getElementById("formMessage");
+  formMessage.textContent = "Message sent successfully!";
+  formMessage.style.color = "green";
+
   form.reset();
 });
 

@@ -419,4 +419,8 @@ textarea{ min-height: 120px; }
   transform: translateY(0);
 }
 
+#formMessage{
+  margin-top:10px;
+  font-weight:600;
+}
 
