@@ -67,9 +67,22 @@
 
   <section id="projects" class="section container">
     <h2>Projects</h2>
+      <div class="filter-buttons">
+        <button type="button" class="filter-btn active" data-filter="all">All</button>
+        <button type="button" class="filter-btn" data-filter="web">Web</button>
+        <button type="button" class="filter-btn" data-filter="desktop">Desktop</button>
+        <button type="button" class="filter-btn" data-filter="ai">AI/ML</button>
+        <button type="button" class="filter-btn" data-filter="uiux">UI/UX</button>
+      </div>
+
+<p id="noProjectsMessage" class="empty-msg" style="display:none;">No projects found.</p>
+
+<div class="project-search">
+  <input id="projectSearch" type="text" placeholder="Search projects..." />
+</div>
 
     <div class="cards">
-      <article class="card">
+      <article class="card project-card" data-tags="desktop">
         <h3>
         Software Design & Construction Projects (SWE 316)
         <span class="tag">Academic Project</span>
@@ -94,7 +107,7 @@
 
       </article>
 
-      <article class="card">
+      <article class="card project-card" data-tags="uiux">
         <h3>
         Software Engineering Design Project (SWE 206)
         <span class="tag">Academic Project</span>

@@ -424,3 +424,46 @@ textarea{ min-height: 120px; }
   font-weight:600;
 }
 
+.filter-buttons{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin: 14px 0 8px;
+}
+
+.filter-btn{
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--muted);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.filter-btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  color: var(--text);
+}
+
+.filter-btn.active{
+  background: var(--primary);
+  color: var(--text);
+  font-weight: 700;
+}
+
+.empty-msg{
+  margin-top: 10px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.project-search{
+  margin: 10px 0 14px;
+}
+
+#projectSearch{
+  width: 100%;
+  max-width: 420px;
+}
