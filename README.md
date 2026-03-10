@@ -1,4 +1,4 @@
-# Assignment 1 – Personal Portfolio
+# Assignment 2 – Personal Portfolio
 
 This project is a responsive personal portfolio website built using HTML, CSS, and JavaScript.  
 It serves as the foundation for my professional portfolio.
