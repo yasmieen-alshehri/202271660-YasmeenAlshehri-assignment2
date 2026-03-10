@@ -30,7 +30,7 @@
   <!-- Hero -->
   <main id="home" class="hero container">
     <h1 class="hero-title">
-      Hi, I'm <span>Yasmeen</span> Alshehri
+      Hi, I'm <span>Yasmeen Alshehri</span>
     </h1>
     <p class="hero-sub">
       Building clean, user-focused web experiences.
@@ -40,7 +40,7 @@
   </main>
 
   <!-- Sections -->
-  <section id="about" class="section container fade-up">
+  <section id="about" class="section container fade-up about-box">
     <h2>About Me</h2>
     <p>
       I’m a Software Engineering student interested in web development and UI/UX design.
@@ -52,7 +52,10 @@
   </section>
 
   <section id="skills" class="section container">
-    <h2>Skills</h2>
+    <div class="section-head">
+        <h2>Skills</h2>
+    </div>
+   
     <div class="chips">
       <span class="chip">HTML</span>
       <span class="chip">CSS</span>
@@ -66,7 +69,10 @@
   </section>
 
   <section id="projects" class="section container">
-    <h2>Projects</h2>
+    <div class="section-head">
+       <h2>Projects</h2>
+       <p>Explore my academic and personal projects.</p>
+    </div>
       <div class="filter-buttons">
         <button type="button" class="filter-btn active" data-filter="all">All</button>
         <button type="button" class="filter-btn" data-filter="web">Web</button>
@@ -83,29 +89,31 @@
 
     <div class="cards">
       <article class="card project-card" data-tags="desktop">
-        <h3>
-        Software Design & Construction Projects (SWE 316)
-        <span class="tag">Academic Project</span>
-        </h3>
 
-        <p> Developed C# desktop applications applying object-oriented design principles.
-            Built tools for schedule analysis and folder structure visualization using recursive traversal.</p>
-        <div class="project-images">
-          <img
-            src="assets/images/swe316-map.png"
-            alt="C# desktop application visualizing course schedules and campus map"
-            class="project-img"
-          />
+  <div class="project-preview">
+    <img src="assets/images/swe316-map.png" class="project-thumb" alt="SWE316 project">
+  </div>
 
-          <img
-            src="assets/images/swe316-bar.png"
-            alt="Bar chart showing folder size analysis"
-            class="project-img"
-          />
-        </div>
+  <h3>Software Design & Construction (SWE 316)</h3>
+
+  <button class="details-btn">View Details</button>
 
 
-      </article>
+  <div class="project-details">
+
+    <p>
+      Developed C# desktop applications applying object-oriented design principles.
+      Built tools for schedule analysis and folder structure visualization.
+    </p>
+
+    <div class="project-images">
+      <img src="assets/images/swe316-map.png" class="project-img">
+      <img src="assets/images/swe316-bar.png" class="project-img">
+    </div>
+
+  </div>
+
+</article>
 
       <article class="card project-card" data-tags="uiux">
         <h3>

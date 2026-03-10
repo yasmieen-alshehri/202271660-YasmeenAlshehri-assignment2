@@ -1,5 +1,4 @@
 // Theme toggle
-
 const themeBtn = document.getElementById("themeBtn");
 
 function setTheme(theme) {
@@ -16,8 +15,7 @@ themeBtn.addEventListener("click", () => {
   setTheme(current === "dark" ? "light" : "dark");
 });
 
-// Form interaction 
-
+// Form interaction
 const form = document.getElementById("contactForm");
 
 form.addEventListener("submit", (e) => {
@@ -30,11 +28,14 @@ form.addEventListener("submit", (e) => {
   form.reset();
 });
 
+// Fade-up animation
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
       }
     });
   },
@@ -47,37 +48,10 @@ document.querySelectorAll(".fade-up").forEach((el) => {
   observer.observe(el);
 });
 
-// Project filter (Type/Tech)
+// Project filter + search
 const filterButtons = document.querySelectorAll(".filter-btn");
 const projectCards = document.querySelectorAll(".project-card");
 const noProjectsMessage = document.getElementById("noProjectsMessage");
-
-filterButtons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const filter = btn.dataset.filter;
-
-    // active button UI
-    filterButtons.forEach((b) => b.classList.remove("active"));
-    btn.classList.add("active");
-
-    let visibleCount = 0;
-
-    projectCards.forEach((card) => {
-      const tags = (card.dataset.tags || "").split(" "); 
-
-      const matches =
-        filter === "all" || tags.includes(filter);
-
-      card.style.display = matches ? "" : "none";
-      if (matches) visibleCount++;
-    });
-
-    if (noProjectsMessage) {
-      noProjectsMessage.style.display = visibleCount === 0 ? "block" : "none";
-    }
-  });
-});
-
 const projectSearch = document.getElementById("projectSearch");
 
 function applyProjectFilters() {
@@ -96,6 +70,7 @@ function applyProjectFilters() {
 
     const show = matchesType && matchesSearch;
     card.style.display = show ? "" : "none";
+
     if (show) visibleCount++;
   });
 
@@ -105,10 +80,27 @@ function applyProjectFilters() {
 }
 
 filterButtons.forEach((btn) => {
-  btn.addEventListener("click", applyProjectFilters);
+  btn.addEventListener("click", () => {
+    filterButtons.forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+    applyProjectFilters();
+  });
 });
-
 
 if (projectSearch) {
   projectSearch.addEventListener("input", applyProjectFilters);
 }
+
+const detailButtons = document.querySelectorAll(".details-btn");
+
+detailButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const card = btn.closest(".project-card");
+    card.classList.toggle("expanded");
+
+    btn.textContent = card.classList.contains("expanded")
+      ? "Hide Details"
+      : "View Details";
+  });
+});
+
