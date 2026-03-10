@@ -15,6 +15,22 @@ themeBtn.addEventListener("click", () => {
   setTheme(current === "dark" ? "light" : "dark");
 });
 
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+if (menuBtn && navLinks) {
+  menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+    menuBtn.textContent = navLinks.classList.contains("show") ? "✕" : "☰";
+  });
+
+  document.querySelectorAll(".nav-links a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("show");
+      menuBtn.textContent = "☰";
+    });
+  });
+}
 // Form interaction
 const form = document.getElementById("contactForm");
 

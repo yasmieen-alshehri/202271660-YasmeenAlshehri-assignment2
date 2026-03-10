@@ -54,9 +54,20 @@ body {
 .nav{
   display:flex;
   align-items:center;
+  position: relative;
   justify-content: space-between;
   padding: 16px 0;
   gap: 12px;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-btn {
+  display: none;
 }
 
 .brand{
@@ -579,3 +590,107 @@ textarea{ min-height: 120px; }
 
   box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
+
+/* ===== Mobile Fix (iPhone & small screens) ===== */
+
+@media (max-width: 768px) {
+
+  /* إظهار زر القائمة */
+  .menu-btn {
+    display: flex;
+  }
+
+  /* إخفاء الروابط افتراضياً، وإظهارها عند الضغط */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--card);
+    border-top: 1px solid var(--border);
+    border-bottom: 2px solid var(--border);
+    padding: 12px 20px 20px;
+    gap: 4px;
+    z-index: 999;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 12px 14px;
+    border-radius: 10px;
+  }
+
+  /* Nav يحتاج position relative حتى يشتغل absolute */
+  .nav {
+    position: relative;
+    flex-wrap: wrap;
+  }
+
+  /* Hero */
+  .hero-title {
+    font-size: 36px;
+    letter-spacing: 0;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+  }
+
+  /* About */
+  #about {
+    padding: 40px 16px;
+  }
+
+  #about h2 {
+    font-size: 28px;
+  }
+
+  #about p {
+    font-size: 16px;
+  }
+
+  /* Section headings */
+  .section-head h2 {
+    font-size: 28px;
+  }
+
+  .section-head p {
+    font-size: 15px;
+  }
+
+  /* Contact */
+  .contact-title {
+    font-size: 30px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Project images */
+  .project-images {
+    grid-template-columns: 1fr;
+  }
+
+  .project-img {
+    height: 200px;
+  }
+
+  /* Cards */
+  #projects .card h3,
+  #activities .card h3 {
+    font-size: 18px;
+  }
+
+  #projects .card p,
+  .activity-card li {
+    font-size: 15px;
+  }
+}
+
+
