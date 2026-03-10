@@ -595,12 +595,11 @@ textarea{ min-height: 120px; }
 
 @media (max-width: 768px) {
 
-  /* إظهار زر القائمة */
   .menu-btn {
     display: flex;
   }
 
-  /* إخفاء الروابط افتراضياً، وإظهارها عند الضغط */
+
   .nav-links {
     display: none;
     flex-direction: column;
@@ -625,7 +624,7 @@ textarea{ min-height: 120px; }
     border-radius: 10px;
   }
 
-  /* Nav يحتاج position relative حتى يشتغل absolute */
+
   .nav {
     position: relative;
     flex-wrap: wrap;
