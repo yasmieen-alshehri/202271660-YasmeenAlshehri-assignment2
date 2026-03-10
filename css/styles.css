@@ -45,6 +45,9 @@ body {
 .header {
   background-color: var(--card);
   border-bottom: 2px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 [data-theme="dark"] .header{
@@ -105,7 +108,6 @@ body {
 }
 
 /* ===== Hero ===== */
-
 .hero{
   min-height: 100vh;
   display:flex;
@@ -115,7 +117,7 @@ body {
   text-align:center;
   gap: 14px;
   padding-top: 60px;
-
+  position: relative;
 }
 
 .hero-title {
@@ -187,6 +189,11 @@ body {
 
 .section{
   padding: 60px 0;
+}
+
+section,
+main {
+  scroll-margin-top: 100px;
 }
 
 .section h2{
@@ -471,8 +478,52 @@ textarea{ min-height: 120px; }
 /* Responsive */
 
 @media (max-width: 768px) {
+  .menu-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav {
+    position: relative;
+  }
+
   .nav-links {
     display: none;
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 190px;
+    padding: 12px;
+    flex-direction: column;
+    gap: 6px;
+    list-style: none;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    z-index: 1000;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 15px;
+    border-radius: 10px;
+  }
+
+  .nav-links a.active {
+    background: var(--primary);
+    color: var(--text);
   }
 
   .cards {
@@ -481,6 +532,16 @@ textarea{ min-height: 120px; }
 
   .project-images {
     grid-template-columns: 1fr;
+  }
+
+  .hero-title {
+    font-size: 42px;
+    letter-spacing: 1px;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    line-height: 1.6;
   }
 }
 
@@ -615,6 +676,12 @@ textarea{ min-height: 120px; }
     z-index: 999;
   }
 
+.nav-links a.active{
+  border-radius: 20px;
+  padding: 8px 10px;
+}
+
+
   .nav-links.show {
     display: flex;
   }
@@ -693,3 +760,38 @@ textarea{ min-height: 120px; }
 }
 
 
+.scroll-indicator{
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+}
+
+.scroll-indicator span{
+  width:18px;
+  height:18px;
+  border-right:2px solid var(--muted);
+  border-bottom:2px solid var(--muted);
+  transform:rotate(45deg);
+}
+
+@keyframes scrollDown{
+  0%{
+    opacity:0;
+    transform:rotate(45deg) translate(-4px,-4px);
+  }
+  50%{
+    opacity:1;
+  }
+  100%{
+    opacity:0;
+    transform:rotate(45deg) translate(4px,4px);
+  }
+}
+
+.nav-links a.active{
+  color: var(--secondary);
+  font-weight:700;
+}
