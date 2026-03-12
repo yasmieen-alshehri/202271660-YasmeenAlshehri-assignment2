@@ -70,6 +70,7 @@ const projectCards = document.querySelectorAll(".project-card");
 const noProjectsMessage = document.getElementById("noProjectsMessage");
 const projectSearch = document.getElementById("projectSearch");
 
+
 function applyProjectFilters() {
   const activeBtn = document.querySelector(".filter-btn.active");
   const filter = activeBtn ? activeBtn.dataset.filter : "all";
@@ -120,20 +121,23 @@ detailButtons.forEach((btn) => {
   });
 });
 
-const sections = document.querySelectorAll("main, section");
+const sections = document.querySelectorAll("section[id]");
 const navItems = document.querySelectorAll(".nav-links a");
 
 window.addEventListener("scroll", () => {
   let currentSection = "";
 
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 120;
-    const sectionHeight = section.offsetHeight;
+  if (window.scrollY < 100) {
+    currentSection = "home";
+  } else {
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
 
-    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-      currentSection = section.getAttribute("id");
-    }
-  });
+      if (rect.top <= 150 && rect.bottom >= 150) {
+        currentSection = section.id;
+      }
+    });
+  }
 
   navItems.forEach((link) => {
     link.classList.remove("active");
@@ -144,3 +148,18 @@ window.addEventListener("scroll", () => {
   });
 });
 
+async function loadQuote() {
+  const quoteBox = document.getElementById("devQuote");
+
+  try {
+    const res = await fetch("https://api.adviceslip.com/advice");
+    const data = await res.json();
+
+    quoteBox.textContent = data.slip.advice;
+
+  } catch (error) {
+    quoteBox.textContent = "Sorry, the advice could not be loaded.";
+  }
+}
+
+loadQuote();

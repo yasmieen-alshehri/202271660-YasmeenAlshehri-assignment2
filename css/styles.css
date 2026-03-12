@@ -194,7 +194,7 @@ main {
   transform: translateX(-50%);
   display: flex;
   justify-content: center;
-  bottom: 140px;
+  bottom: 120px;
 }
 
 .scroll-indicator span {
@@ -601,6 +601,26 @@ main {
 
 .info-value:hover {
   color: var(--text);
+}
+
+.dev-quote{
+  margin-top: 25px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(199,163,201,0.15);
+  border: 1px solid var(--border);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.dev-quote h4{
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+#devQuote{
+  color: var(--muted);
+  font-style: italic;
 }
 
 .form {
