@@ -34,7 +34,7 @@ Several interactive features were implemented using JavaScript:
 - Project search functionality that filters cards dynamically.
 - Expandable project cards that reveal additional details.
 - Active navigation highlighting based on scroll position.
-- Fade-up animations triggered when elements enter the viewport.
+- A fade-up animation is used for the About section when it becomes visible during scrolling.
 
 ---
 
