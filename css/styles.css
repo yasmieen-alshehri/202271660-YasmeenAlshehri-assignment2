@@ -150,7 +150,6 @@ main {
   font-weight: 800;
   letter-spacing: 2px;
   color: var(--text);
-
   margin-top: -220px;
 }
 
@@ -189,12 +188,11 @@ main {
 
 .scroll-indicator{
   position: absolute;
-  bottom: 60px;
+  bottom: 120px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   justify-content: center;
-  bottom: 120px;
 }
 
 .scroll-indicator span {
@@ -325,7 +323,7 @@ main {
   transition: all 0.25s ease;
 }
 
-.chip:hover{
+.chip:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0,0,0,0.08);
 }

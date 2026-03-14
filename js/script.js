@@ -121,6 +121,7 @@ detailButtons.forEach((btn) => {
   });
 });
 
+// Highlight the active navigation link based on the current scroll position
 const sections = document.querySelectorAll("section[id]");
 const navItems = document.querySelectorAll(".nav-links a");
 
@@ -148,6 +149,7 @@ window.addEventListener("scroll", () => {
   });
 });
 
+// Fetch a developer quote from a public API and display it in the contact section
 async function loadQuote() {
   const quoteBox = document.getElementById("devQuote");
 
