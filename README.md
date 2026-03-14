@@ -8,10 +8,15 @@ It serves as the foundation for my professional portfolio.
 ## Features
 
 - Responsive layout (desktop, tablet, mobile)
-- Dark/Light theme toggle
+- Dark / Light theme toggle using localStorage
 - Smooth scrolling navigation
 - Fade-up animation on scroll
-- Contact form UI (no backend)
+- Project filtering by category
+- Project search functionality
+- Expandable project details
+- Active navigation highlighting on scroll
+- Contact form with validation and success message
+- Developer quote fetched from the Advice Slip public API
 
 ---
 
@@ -19,12 +24,12 @@ It serves as the foundation for my professional portfolio.
 
 - HTML5
 - CSS3 (Flexbox, Grid, Media Queries, CSS Variables)
-- JavaScript (Theme toggle, animations, form interaction)
+- JavaScript (theme toggle, animations, project filtering, search, API fetch, form interaction)
 
 ## Project Structure
 
 ```
-assignment-1/
+202271660-YasmeenAlshehri-assignment2/
 │
 ├── index.html
 ├── css/
